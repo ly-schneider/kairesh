@@ -5,7 +5,8 @@ import {HeroSectionComponent} from '../../shared/hero-section/hero-section.compo
 import {ContainerComponent} from '../../shared/container/container.component';
 import {ProjectsComponent} from '../../shared/projects/projects.component';
 import {ValuesComponent} from '../../shared/values/values.component';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {DomSanitizer, SafeHtml, Title} from '@angular/platform-browser';
+import {InfosComponent} from '../../shared/infos/infos.component';
 
 @Component({
   selector: 'app-projekte-detail',
@@ -14,7 +15,8 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
     HeroSectionComponent,
     ContainerComponent,
     ProjectsComponent,
-    ValuesComponent
+    ValuesComponent,
+    InfosComponent
   ],
   templateUrl: './projekte-detail.component.html',
   styleUrl: './projekte-detail.component.scss'
@@ -27,7 +29,7 @@ export class ProjekteDetailComponent implements OnInit {
   }
   protected text: string;
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title) {
   }
 
   formatTextToHTML(text: string): SafeHtml {
@@ -64,6 +66,7 @@ export class ProjekteDetailComponent implements OnInit {
           console.error("Unknown project: " + params["url"]);
         }
       }
+      this.titleService.setTitle(`${this.heroSectionContent.title} - Projekte - Kairesh`);
     })
   }
 }

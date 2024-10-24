@@ -10,8 +10,25 @@
       <li [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link">
         <a routerLink="/verein">Verein</a>
       </li>
-      <li [ngClass]="{'border-secondary': currentRoute === '/projekte'}" class="nav-link">
+      <li [ngClass]="{'border-secondary': currentRoute.startsWith('/projekte')}" class="nav-link relative group">
         <a routerLink="/projekte">Projekte</a>
+        <ul class="absolute hidden group-hover:flex flex-col [&>li]:py-3 divide-y divide-[#E4E4E4] bg-background border border-[#E4E4E4] shadow-default rounded-lg px-4 mt-0.5 left-1/2 -translate-x-1/2 z-10 w-36">
+          <li>
+            <a class="nav-link block" routerLink="/projekte/b1-bildung-in-kirgistan">B1 Bildung in
+              Kirgistan</a>
+          </li>
+          <li>
+            <a class="nav-link block" routerLink="/projekte/b2-bildung-in-mosambik">B2 Bildung in Mosambik</a>
+          </li>
+          <li>
+            <a class="nav-link block" routerLink="/projekte/u1-unterstuetzung-oasis-kirgistan">U1
+              Unterstützung Oasis Kirgistan</a>
+          </li>
+          <li>
+            <a class="nav-link block" routerLink="/projekte/u2-unterstuetzung-kedesh-mosambik">U2
+              Unterstützung Kedesh in Mosambik</a>
+          </li>
+        </ul>
       </li>
     </ul>
     <button (click)="navigationOpen = !navigationOpen" class="sm:hidden flex items-center justify-center">
@@ -26,8 +43,27 @@
     <li [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link w-max">
       <a routerLink="/verein">Verein</a>
     </li>
-    <li [ngClass]="{'border-secondary': currentRoute === '/projekte'}" class="nav-link w-max">
-      <a routerLink="/projekte">Projekte</a>
+    <li (click)="subNavigationOpen = !subNavigationOpen" class="w-max flex items-center">
+      <button [ngClass]="{'border-secondary': currentRoute.startsWith('/projekte')}" class="nav-link">Projekte</button>
+      <i *ngIf="!subNavigationOpen" class="fa-solid fa-chevron-right text-xs"></i>
+      <i *ngIf="subNavigationOpen" class="fa-solid fa-chevron-down text-xs"></i>
     </li>
+    <ul *ngIf="subNavigationOpen" class="flex flex-col [&>li]:py-3 divide-y divide-[#E4E4E4] bg-background pl-4">
+      <li (click)="closeAll()">
+        <a class="nav-link block" routerLink="/projekte/b1-bildung-in-kirgistan">B1 Bildung in
+          Kirgistan</a>
+      </li>
+      <li (click)="closeAll()">
+        <a class="nav-link block" routerLink="/projekte/b2-bildung-in-mosambik">B2 Bildung in Mosambik</a>
+      </li>
+      <li (click)="closeAll()">
+        <a class="nav-link block" routerLink="/projekte/u1-unterstuetzung-oasis-kirgistan">U1
+          Unterstützung Oasis Kirgistan</a>
+      </li>
+      <li (click)="closeAll()">
+        <a class="nav-link block" routerLink="/projekte/u2-unterstuetzung-kedesh-mosambik">U2
+          Unterstützung Kedesh in Mosambik</a>
+      </li>
+    </ul>
   </ul>
 </nav>

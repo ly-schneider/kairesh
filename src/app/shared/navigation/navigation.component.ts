@@ -16,6 +16,7 @@ import {NgClass, NgIf} from '@angular/common';
 export class NavigationComponent implements OnInit {
   currentRoute: string = '';
   navigationOpen: boolean = false;
+  subNavigationOpen: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -25,5 +26,10 @@ export class NavigationComponent implements OnInit {
         this.currentRoute = event.url;
       }
     });
+  }
+
+  closeAll(): void {
+    this.navigationOpen = false;
+    this.subNavigationOpen = false;
   }
 }

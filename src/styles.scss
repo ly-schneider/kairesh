@@ -1,1 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://use.typekit.net/cvm2ulv.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text: #12130F;
+    --background: #F8F8F8;
+    --primary: #0095B8;
+    --secondary: #FF6D6D;
+
+    --anek: "anek-gurmukhi-variable", sans-serif;
+    --anek-wdth: 100;
+    --anek-wght: 500;
+
+    --nunito-sans: "nunito-sans", sans-serif;
+  }
+
+  body {
+    @apply bg-background text-text overflow-x-hidden flex flex-col min-h-screen;
+  }
+}
+
+@layer utilities {
+  .font-thin {
+    font-variation-settings: 'wght' 100;
+  }
+
+  .font-extralight {
+    font-variation-settings: 'wght' 200;
+  }
+
+  .font-light {
+    font-variation-settings: 'wght' 300;
+  }
+
+  .font-normal {
+    font-variation-settings: 'wght' 400;
+  }
+
+  .font-medium {
+    font-variation-settings: 'wght' 500;
+  }
+
+  .font-semibold {
+    font-variation-settings: 'wght' 600, 'wdth' 110;
+  }
+
+  .font-bold {
+    font-variation-settings: 'wght' 700;
+  }
+
+  .font-extrabold {
+    font-variation-settings: 'wght' 800;
+  }
+
+  .font-black {
+    font-variation-settings: 'wght' 900;
+  }
+}
+
+@layer components {
+  .text {
+    @apply text-base font-semibold font-nunitoSans;
+  }
+
+  .title {
+    @apply text-4xl font-semibold font-anek;
+  }
+
+  .btn {
+    @apply px-8 py-2 rounded-lg text transition-default items-center flex justify-center hover:opacity-90;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-background;
+  }
+
+  .nav-link {
+    @apply border-b-2 border-transparent transition-all duration-300 text px-2;
+  }
+
+  .transition-default {
+    @apply transition-all duration-300;
+  }
+}
+
+.shadow-default {
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+}

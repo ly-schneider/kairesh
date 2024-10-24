@@ -1,0 +1,40 @@
+<app-hero-section [content]="content"/>
+<app-container>
+  <section>
+    <div class="flex flex-row justify-between">
+      <div class="max-w-4xl">
+        <h3 class="text text-primary font-extrabold">Wer wir sind</h3>
+        <h2 class="title mt-0.5 text-3xl md:text-4xl">Creating new perspectives</h2>
+        <h4 class="title text-base mt-2">Was bedeutet KAIRESH?</h4>
+        <p class="text mt-2">
+          „KAIR“ kommt von „Kairat“, was auf kirgisisch Mut und Verantwortung bedeutet, und „ESH“ kommt vom
+          hebräischen
+          Wort „Kedesh“ und steht für einen sicheren Zufluchtsort. Kedesh ist gleichzeitig auch der Name des
+          Waisenhauses
+          in Mosambik, welches Vize-Präsidentin und Projektleiterin Patricia Jucker seit 2008 regelmässig
+          besucht und
+          unterstützt.
+        </p>
+        <div class="w-auto mt-8">
+          <a routerLink="/verein" class="btn btn-primary w-max">Der Verein</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mt-24">
+    <app-values/>
+  </section>
+  <section class="mt-32">
+    <h3 class="title text-3xl text-center">Wir tun es für alle Kinder</h3>
+    <div class="mt-10">
+      <app-projects/>
+    </div>
+  </section>
+  <section class="mt-32 max-w-2xl mx-auto flex flex-col items-center">
+    <h3 class="title text-3xl text-center">Auch du kannst heute ein leben verändern</h3>
+    <p class="text text-center mt-4">So lange es Kinder und Jugendliche gibt, die keinen freien Zugang zu einer Ausbildung haben, können wir nicht
+      ruhen. Es braucht nicht viel, um ein Leben zu verändern. Kontaktiere uns heute noch und mach einen
+      Unterschied.</p>
+    <a routerLink="/projekte" class="btn btn-primary w-max text-center mt-12">Unsere Projekte</a>
+  </section>
+</app-container>

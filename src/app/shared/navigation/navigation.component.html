@@ -1,0 +1,33 @@
+<nav class="flex flex-col sm:justify-between sm:items-center max-w-7xl mx-auto bg-background py-3 px-8">
+  <div class="flex flex-row justify-between items-center w-full">
+    <a routerLink="/">
+      <img class="w-[110px] h-auto" src="/images/logos/KAIRESH-Logo.png" alt="KAIRESH Logo"/>
+    </a>
+    <ul class="hidden sm:flex flex-row gap-4">
+      <li [ngClass]="{'border-secondary': currentRoute === '/'}" class="nav-link">
+        <a routerLink="/">Home</a>
+      </li>
+      <li [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link">
+        <a routerLink="/verein">Verein</a>
+      </li>
+      <li [ngClass]="{'border-secondary': currentRoute === '/projekte'}" class="nav-link">
+        <a routerLink="/projekte">Projekte</a>
+      </li>
+    </ul>
+    <button (click)="navigationOpen = !navigationOpen" class="sm:hidden flex items-center justify-center">
+      <i *ngIf="!navigationOpen" class="fa-solid fa-bars-staggered text-2xl"></i>
+      <i *ngIf="navigationOpen" class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+  </div>
+  <ul *ngIf="navigationOpen" class="flex flex-col gap-4 mt-6 -translate-x-2">
+    <li [ngClass]="{'border-secondary': currentRoute === '/'}" class="nav-link w-max">
+      <a routerLink="/">Home</a>
+    </li>
+    <li [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link w-max">
+      <a routerLink="/verein">Verein</a>
+    </li>
+    <li [ngClass]="{'border-secondary': currentRoute === '/projekte'}" class="nav-link w-max">
+      <a routerLink="/projekte">Projekte</a>
+    </li>
+  </ul>
+</nav>

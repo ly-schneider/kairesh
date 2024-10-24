@@ -1,0 +1,7 @@
+<app-hero-section [content]="heroSectionContent"/>
+<app-container>
+  <section class="flex flex-col gap-4" [innerHTML]="formatTextToHTML(text)"></section>
+  <section class="mt-32">
+    <app-values/>
+  </section>
+</app-container>

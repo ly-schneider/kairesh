@@ -1,0 +1,14 @@
+<section class="relative bg-cover bg-center flex flex-col" [ngClass]="{'h-[85vh]': content.description, 'h-[70vh]': !content.description && content.buttons.length == 0}" [ngStyle]="{'background-image': 'url(' + content.backgroundImage + ')'}">
+  <div class="relative z-10 flex flex-col items-center justify-center h-3/4 text-center max-w-3xl mx-auto px-8">
+    <h1 class="title text-background text-4xl md:text-5xl">{{ content.title }}</h1>
+    <p *ngIf="content.description" class="text text-lg text-background mt-2">
+      {{ content.description }}
+    </p>
+    <div *ngIf="content.buttons.length > 0" class="flex flex-col sm:flex-row gap-4 mt-8">
+      <a *ngFor="let button of content.buttons" [routerLink]="button.link" class="btn btn-primary">
+        {{ button.text }}
+      </a>
+    </div>
+  </div>
+  <app-divider class="mt-auto" />
+</section>

@@ -95,6 +95,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/kairesh",
+            "netlifyToken": "nfp_oTm41mZXmdJZzf9w9TGB9DmUTWdkT2xxe3d5",
+            "siteId": "3cb4ed5d-3fde-4345-97d3-164c1ca4b8dc"
+          }
         }
       }
     }

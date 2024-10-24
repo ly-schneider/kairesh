@@ -27,7 +27,7 @@ export class KontaktComponent {
     buttons: []
   }
   protected readonly ContainerSize = ContainerSize;
-  protected formSubmitted: boolean = true;
+  protected formSubmitted: boolean = false;
 
   constructor() {}
 

@@ -1,4 +1,5 @@
 export enum ContainerSize {
   DEFAULT,
-  SMALL
+  SMALL,
+  EXTRA_SMALL
 }

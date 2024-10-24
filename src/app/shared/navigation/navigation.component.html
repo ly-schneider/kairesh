@@ -1,4 +1,4 @@
-<nav class="flex flex-col sm:justify-between sm:items-center max-w-7xl mx-auto bg-background py-3 px-8">
+<nav class="flex flex-col sm:justify-between sm:items-center max-w-7xl mx-auto bg-background py-3 px-4 sm:px-8">
   <div class="flex flex-row justify-between items-center w-full">
     <a routerLink="/">
       <img class="w-[110px] h-auto" src="/images/logos/KAIRESH-Logo.png" alt="KAIRESH Logo"/>
@@ -12,7 +12,8 @@
       </li>
       <li [ngClass]="{'border-secondary': currentRoute.startsWith('/projekte')}" class="nav-link relative group">
         <a routerLink="/projekte">Projekte</a>
-        <ul class="absolute hidden group-hover:flex flex-col [&>li]:py-3 divide-y divide-[#E4E4E4] bg-background border border-[#E4E4E4] shadow-default rounded-lg px-4 mt-0.5 left-1/2 -translate-x-1/2 z-10 w-36">
+        <ul
+          class="absolute hidden group-hover:flex flex-col [&>li]:py-3 divide-y divide-[#E4E4E4] bg-background border border-[#E4E4E4] shadow-default rounded-lg px-4 mt-0.5 left-1/2 -translate-x-1/2 z-10 w-36">
           <li>
             <a class="nav-link block" routerLink="/projekte/b1-bildung-in-kirgistan">B1 Bildung in
               Kirgistan</a>

@@ -17,6 +17,7 @@ module.exports = {
         secondary: "var(--secondary)",
       },
       fontFamily: {
+        effra: "var(--effra)",
         anek: "var(--anek)",
         nunitoSans: "var(--nunito-sans)",
       },

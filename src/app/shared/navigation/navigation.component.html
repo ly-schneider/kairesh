@@ -38,10 +38,10 @@
     </button>
   </div>
   <ul *ngIf="navigationOpen" class="flex flex-col gap-4 mt-6 -translate-x-2">
-    <li [ngClass]="{'border-secondary': currentRoute === '/'}" class="nav-link w-max">
+    <li (click)="closeAll()" [ngClass]="{'border-secondary': currentRoute === '/'}" class="nav-link w-max">
       <a routerLink="/">Home</a>
     </li>
-    <li [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link w-max">
+    <li (click)="closeAll()" [ngClass]="{'border-secondary': currentRoute === '/verein'}" class="nav-link w-max">
       <a routerLink="/verein">Verein</a>
     </li>
     <li (click)="subNavigationOpen = !subNavigationOpen" class="w-max flex items-center">

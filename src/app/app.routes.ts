@@ -6,6 +6,7 @@ import {ProjekteDetailComponent} from './pages/projekte-detail/projekte-detail.c
 import {ImpressumComponent} from './pages/impressum/impressum.component';
 import {DatenschutzComponent} from './pages/datenschutz/datenschutz.component';
 import {KontaktComponent} from './pages/kontakt/kontakt.component';
+import {HiddenComponent} from './pages/hidden/hidden.component';
 
 export const routes: Routes = [
   { path: "", title: "KAIRESH - Neue Perspektiven für Jugendliche in Not", component: HomeComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: "impressum", title: "Impressum - KAIRESH", component: ImpressumComponent },
   { path: "datenschutz", title: "Datenschutz - KAIRESH", component: DatenschutzComponent },
   { path: "kontakt", title: "Kontakt - KAIRESH", component: KontaktComponent },
+  { path: "hidden", title: "Hidden - KAIRESH", component: HiddenComponent },
 ];

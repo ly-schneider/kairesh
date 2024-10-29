@@ -1,0 +1,88 @@
+<app-hero-section [content]="content"/>
+<app-container [size]="ContainerSize.SMALL">
+  <section>
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/content/08-26-2020-OasisCampDayOne-1-1024x683.jpeg"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/content/20191020-78-copy-1024x683.jpg"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/content/08052020OasisManicures-8-1024x683.jpeg"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/content/08052020OasisManicures-60-1024x683.jpeg"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/content/20191020-40-copy-1024x683.jpeg"
+               class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+      </div>
+      <button type="button"
+              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-prev>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-next>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+    <div class="overflow-x-auto bg-white rounded-lg shadow-lg mt-32">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-100">
+        <tr>
+          <th class="px-6 py-3 text-left text text-xs text-gray-500 uppercase tracking-wider">ID</th>
+          <th class="px-6 py-3 text-left text text-xs text-gray-500 uppercase tracking-wider">Name</th>
+          <th class="px-6 py-3 text-left text text-xs text-gray-500 uppercase tracking-wider">Email</th>
+          <th class="px-6 py-3 text-left text text-xs text-gray-500 uppercase tracking-wider">Role</th>
+          <th class="px-6 py-3 text-left text text-xs text-gray-500 uppercase tracking-wider">Status</th>
+        </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let user of users">
+          <td class="px-6 py-4 whitespace-nowrap text">{{ user.id }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text">{{ user.name }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text">{{ user.email }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text">{{ user.role }}</td>
+          <td class="px-6 py-4 whitespace-nowrap text">
+                        <span
+                          [ngClass]="{
+                                'bg-green-100 text-green-800': user.status === 'Active',
+                                'bg-yellow-100 text-yellow-800': user.status === 'Pending',
+                                'bg-red-100 text-red-800': user.status === 'Inactive'
+                            }"
+                          class="px-2 inline-flex text text-sm leading-5 rounded-full"
+                        >
+                            {{ user.status }}
+                        </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</app-container>

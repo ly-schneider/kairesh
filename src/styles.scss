@@ -20,6 +20,10 @@
     --nunito-sans: "nunito-sans", sans-serif;
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply bg-background text-text overflow-x-hidden;
   }
